@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            echo "build stage"
+
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -12,6 +12,7 @@ pipeline {
             }
 
             steps {
+                echo "build stage"
                 sh '''
                     ls -la
                     node --version
@@ -23,7 +24,7 @@ pipeline {
             }
         }
         stage('Test') {
-            echo "test stage"
+
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -32,6 +33,7 @@ pipeline {
             }
 
             steps {
+                echo "test stage"
                 sh '''
 
                     ls -la
